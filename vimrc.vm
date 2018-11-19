@@ -1,0 +1,61 @@
+set nocompatible	" required
+filetype off		" required
+
+"set the runtime path to include Vundle and intialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+
+Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'vim-syntastic/syntastic'
+"Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+
+
+
+
+
+set encoding=utf-8
+
+call vundle#end()	  "required
+
+filetype plugin indent on "required
+
+
+" add proper PEP8 indentation
+au BufNewFile,BufRead *.py 
+	\ set tabstop=4 
+	\ softtabstop=4
+	\ shiftwidth=4
+	\ expandtab
+	\ autoindent
+	\ fileformat=unix
+
+"	\ textwidth=79
+au BufNewFile,BufRead *.js, *html, *.css
+	\ set tabstop=2
+	\ softtapstop=2
+	\ shiftwidth=2
+
+
+" make code look pretty
+let python_highlight_all=1
+syntax on
+colorscheme gruvbox
+if &term =~ '256color'
+	set t_ut=
+endif
+
+set background=dark
+
+set nu
+set ruler
+set cursorline
+
+
+autocmd vimenter * NERDTree
