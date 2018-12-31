@@ -44,9 +44,10 @@ au BufNewFile,BufRead *.js, *html, *.css
 
 
 " make code look pretty
-let python_highlight_all=1
+
 syntax on
 colorscheme gruvbox
+
 if &term =~ '256color'
 	set t_ut=
 endif
@@ -59,3 +60,4 @@ set cursorline
 
 
 autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
